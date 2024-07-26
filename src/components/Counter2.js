@@ -1,10 +1,9 @@
 'use client';
-import React from 'react'
-
-{/*ovo ne valja, ostavio sam tu da mogu da uporedim*/}
-const Counter = ({}) => {
-    const [count, setCount] = React.useState(0)
-
+import React, {useContext} from 'react'
+import {CounterContext2} from '@/pages/index.js'
+const Counter2 = () => {
+    const [count, setCount] = useContext(CounterContext2)
+   
     function incrementCount (){
         setCount((prevCount)=> prevCount +1)
     }
@@ -12,14 +11,14 @@ const Counter = ({}) => {
     function decrementCount (){
       setCount((prevCount)=> prevCount -1)
     }
-    
+
   return (
     <div>
     <button onClick={()=>incrementCount()}>+</button>
         <p>Kanter! {count}</p>
     <button onClick={()=>decrementCount()}>-</button>
-    </div>
+    </div> 
   );
 };
 
-export default Counter
+export default Counter2    
